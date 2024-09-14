@@ -4,67 +4,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Portfolio</title>
+    <title>About me</title>
     <style>
+        /* Global Styles */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            color: #e0e0e0;
+            background-color: #1c1c1c;
+            background-image: url('https://www.bing.com/images/search?view=detailV2&ccid=qDvY17Ml&id=3D38A73FA0D36D70EECC3F89BE5047C57C8FAE62&thid=OIP.qDvY17MlhXes-KeAQOoprAHaEJ&mediaurl=https%3A%2F%2Fimg.freepik.com%2Fpremium-photo%2Fblack-3d-background-wallpaper-simple-modern_552255-4277.jpg&cdnurl=https%3A%2F%2Fth.bing.com%2Fth%2Fid%2FR.a83bd8d7b3258577acf8a78040ea29ac%3Frik%3DYq6PfMVHUL6JPw%26pid%3DImgRaw%26r%3D0&exph=351&expw=626&q=dark+theme+wallpaper+1980*1080&simid=608049022173132285&form=IRPRST&ck=D095FFFC46F87CDFF34615F15C55B0E8&selectedindex=19&itb=0&ajaxhist=0&ajaxserp=0&pivotparams=insightsToken%3Dccid_Y71Auk4s*cp_B8142CD9C753EB7E30BBB5947A198B16*mid_12063642FD1DB8192D90B6C1ECA5EB4F4EB729BC*simid_607987372197241908*thid_OIP.Y71Auk4sPOuOy5Kr7qGeJAAAAA&vt=0&sim=11&iss=VSI&ajaxhist=0&ajaxserp=0'); /* Replace with actual background image URL */
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
         }
+        /* Overlay to darken the background image */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7); /* Darken overlay */
+            z-index: -1;
+        }
+
         header {
-            background-color: #333;
+            background: rgba(0, 0, 0, 0.8); /* Semi-transparent header */
             color: #fff;
             text-align: center;
             padding: 2rem 0;
+            position: relative;
+            border-bottom: 2px solid #007BFF;
         }
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 3rem;
+            letter-spacing: 2px;
+            animation: fadeIn 1s ease-in-out;
         }
         nav {
             margin-top: 10px;
         }
         nav a {
-            color: white;
+            color: #007BFF;
             margin: 0 15px;
             text-decoration: none;
             font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         nav a:hover {
-            text-decoration: underline;
+            background-color: #007BFF;
+            color: #fff;
         }
+
+        /* Keyframes for Header Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
         .container {
             width: 80%;
             margin: auto;
             overflow: hidden;
+            padding: 50px 0;
         }
-        section {
-            padding: 20px 0;
-        }
+
+        /* About Section */
         section#about {
             text-align: center;
-            background-color: #fff;
-            border-bottom: 2px solid #333;
+            background: rgba(0, 0, 0, 0.7);
+            border-bottom: 2px solid #007BFF;
+            padding: 50px 0;
+            color: #e0e0e0;
         }
         section#about img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
             margin-top: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+        section#about img:hover {
+            transform: scale(1.1);
         }
         section#about h2 {
             margin-top: 10px;
+            font-size: 2.5rem;
+            color: #fff;
         }
         section#about p {
             width: 70%;
             margin: auto;
             line-height: 1.6;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
+
+        /* Skills Section */
         section#skills {
-            background-color: #e2e2e2;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 50px 0;
         }
         .skills-list {
             display: flex;
@@ -74,55 +123,97 @@
         .skills-list div {
             width: 30%;
             text-align: center;
+            transition: transform 0.3s ease;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+        .skills-list div:hover {
+            transform: scale(1.05);
         }
         .skills-list div i {
             font-size: 2rem;
-            color: #333;
+            color: #007BFF;
         }
+        .skills-list div h3 {
+            color: #fff;
+            margin-top: 15px;
+        }
+
+        /* Projects Section */
         section#projects {
-            background-color: #fff;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 50px 0;
         }
         .project-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
             gap: 20px;
-            padding: 20px 0;
         }
         .project {
-            background-color: #f4f4f4;
+            background-color: rgba(255, 255, 255, 0.1);
             padding: 20px;
             width: 30%;
-            border: 1px solid #ddd;
-            transition: transform 0.3s;
+            border: 1px solid #007BFF;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s ease;
         }
         .project:hover {
             transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
         }
         .project img {
             width: 100%;
+            border-radius: 5px;
         }
         .project h3 {
             text-align: center;
+            color: #007BFF;
         }
+        .project a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s ease;
+        }
+        .project a:hover {
+            color: #007BFF;
+        }
+
+        /* Responsive Design */
+        @media(max-width: 768px) {
+            .skills-list, .project-grid {
+                flex-direction: column;
+            }
+            .skills-list div, .project {
+                width: 100%;
+            }
+        }
+
+        /* Footer Styles */
         footer {
-            background-color: #333;
+            background: rgba(0, 0, 0, 0.8);
             color: white;
             text-align: center;
-            padding: 10px 0;
+            padding: 20px 0;
+            border-top: 2px solid #007BFF;
         }
         footer a {
-            color: #fff;
+            color: #007BFF;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
         footer a:hover {
-            text-decoration: underline;
+            color: #fff;
         }
+
     </style>
 </head>
 <body>
     <header>
-        <h1>Sayan Dutta</h1>
+        <h1>Sᴀʏᴀɴ Dᴜᴛᴛᴀ</h1>
         <nav>
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
@@ -134,50 +225,51 @@
     <section id="about" class="container">
         <img src="picture1.jpg" alt="Profile Picture">
         <h2>About Me</h2>
-        <p>its a description of a about me. im too lazy to write one</p>
+        <p>Welcome to my Webpage. im too lazy to write anything so enjoy here.</p>
     </section>
 
-    <section id="skills
-        s" class="container">
+    <section id="skills" class="container" align="center">
         <h2>Skills</h2>
         <div class="skills-list">
             <div>
                 <i class="fas fa-code"></i>
                 <h3>Web Development</h3>
-                <p>HTML, Java, JavaScript</p>
+                <p>HTML, CSS, JavaScript, Java</p>
             </div>
             <div>
                 <i class="fas fa-database"></i>
                 <h3>Backend Development</h3>
-                <p>Node.js</p>
+                <p>Node.js, SQL</p>
             </div>
             <div>
                 <i class="fas fa-paint-brush"></i>
                 <h3>Design</h3>
-                <p>Photoshop, After Effects</p>
+                <p>Photoshop</p>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="container">
+    <section id="projects" class="container" align="center">
         <h2>Projects</h2>
         <div class="project-grid">
             <div class="project">
                 <a href="https://www.spigotmc.org/resources/verifyplugin.118077/" target="_blank">
-                <img src="verify.jpeg" alt="Project 1">
-                <h3>Project 1</h3>
-                <p>A brief description of your first project.</p>
+                    <img src="verfiy.jpeg" alt="verification">
+                    <h3>Project 1</h3>
+                    <p>This is a simple verification plguin for minecraft paper/spigot servers. clicking here will take to the spigot website for more info.</p>
+                </a>
             </div>
             <div class="project">
-                <img src="https://via.placeholder.com/300" alt="Project 2">
-                <h3>Project 2</h3>
-                <p>A brief description of your second project.</p>
+                <a href="https://www.spigotmc.org/resources/simple-wheel-of-fortune.118155/" target="_blank">
+                    <img src="casino.jpeg" alt="Wheel of fortune">
+                    <h3>Project 2</h3>
+                    <p>This is simple casino Wheel of Fortune plguin for minecraft paepr/spigot servers. clicking here will take to the spigot website for more info</p>
             </div>
             <div class="project">
-                <img src="https://via.placeholder.com/300" alt="Project 3">
-                <h3>Project 3</h3>
-                <p>A brief description of your third project.</p>
-            </div>
+                <a herf="https://github.com/BlackN64/anticheat/blob/master/src/main/java/org/ayosynk/anticheat/AutoClickerDetector.java" target="_blank">
+                    <img src-"anticheat.jpeg" alt="Anticheat">
+                    <h3>Project 3</h3>
+                    <p>This is a Anticheat plguin for minecraft paper/spigot server. tihs is project is still in under development. clicking here will take to the github src code.</p>
         </div>
     </section>
 
