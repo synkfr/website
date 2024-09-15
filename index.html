@@ -43,6 +43,8 @@
             text-align: center;
             padding: 1.5rem 0;
             border-bottom: 2px solid #007BFF;
+            position: relative;
+            z-index: 1;
         }
         header h1 {
             margin: 0;
@@ -212,6 +214,50 @@
             transform: scale(1.2);
         }
 
+        /* Sidebar Styles */
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            background-color: #333;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+            z-index: 1000;
+        }
+        .sidebar a {
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: #e0e0e0;
+            display: block;
+            transition: 0.3s;
+        }
+        .sidebar a:hover {
+            color: #007BFF;
+            background-color: #575757;
+        }
+        .sidebar .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        .openbtn {
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #007BFF;
+            background: none;
+            border: none;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+        }
+        
         /* Animations */
         @keyframes fadeIn {
             from {
@@ -256,6 +302,7 @@
 </head>
 <body>
     <header>
+        <button class="openbtn" onclick="openNav()">&#9776;</button>
         <h1>Sᴀʏᴀɴ Dᴜᴛᴛᴀ</h1>
         <nav>
             <a href="#about">About</a>
@@ -264,6 +311,14 @@
             <a href="#contact">Contact</a>
         </nav>
     </header>
+
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
 
     <section id="about" class="container">
         <img src="picture1.jpg" alt="Profile Picture">
@@ -293,7 +348,7 @@
     </section>
 
     <section id="projects" class="container">
-        <h2 align="cneter">Projects</h2>
+        <h2 align="center">Projects</h2>
         <div class="project-grid">
             <div class="project">
                 <a href="https://www.spigotmc.org/resources/verifyplugin.118077/" target="_blank">
@@ -327,5 +382,15 @@
         </div>
         <p>&copy; Sayan Dutta</p>
     </footer>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.left = "0";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.left = "-250px";
+        }
+    </script>
 </body>
 </html>
