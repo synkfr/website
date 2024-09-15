@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>About me</title>
+    
+    <!-- FontAwesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
     <style>
         /* Global Styles */
         body {
@@ -18,7 +22,9 @@
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
+            scroll-behavior: smooth; /* Smooth scrolling */
         }
+        
         /* Overlay to darken the background image */
         body::before {
             content: '';
@@ -42,6 +48,7 @@
             margin: 0;
             font-size: 2.5rem;
             letter-spacing: 2px;
+            animation: fadeIn 1.5s ease-in-out; /* Header animation */
         }
         nav {
             margin-top: 10px;
@@ -74,6 +81,7 @@
             border-bottom: 2px solid #007BFF;
             padding: 40px 0;
             color: #e0e0e0;
+            animation: fadeIn 1.5s ease-in-out;
         }
         section#about img {
             width: 120px;
@@ -99,6 +107,7 @@
         section#skills {
             background: rgba(0, 0, 0, 0.7);
             padding: 40px 0;
+            animation: slideIn 1.5s ease-in-out; /* Add slide-in animation */
         }
         .skills-list {
             display: flex;
@@ -115,6 +124,10 @@
             background: rgba(255, 255, 255, 0.05);
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease-in-out; /* Hover effect */
+        }
+        .skills-list div:hover {
+            transform: scale(1.05);
         }
         .skills-list div i {
             font-size: 2rem;
@@ -129,6 +142,7 @@
         section#projects {
             background: rgba(0, 0, 0, 0.7);
             padding: 40px 0;
+            animation: fadeIn 1.5s ease-in-out;
         }
         .project-grid {
             display: flex;
@@ -144,6 +158,10 @@
             border: 1px solid #007BFF;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease-in-out;
+        }
+        .project:hover {
+            transform: scale(1.05);
         }
         .project img {
             width: 100%;
@@ -177,6 +195,41 @@
         }
         footer a:hover {
             color: #fff;
+        }
+
+        /* Social Media Icons */
+        .social-icons {
+            margin-top: 10px;
+        }
+        .social-icons a {
+            color: #007BFF;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #fff;
+            transform: scale(1.2);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(20%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         /* Responsive Design */
@@ -260,12 +313,18 @@
                 <a href="https://github.com/BlackN64/anticheat/blob/master/src/main/java/org/ayosynk/anticheat/AutoClickerDetector.java" target="_blank">
                     <img src="anticheat.jpeg" alt="Anticheat">
                     <h3>Project 3</h3>
-                    <p>This is a Anticheat plguin for minecraft paper/spigot server. tihs is project is still in under development. clicking here will take to the github src code.</p>
+                    <p>This is an Anticheat plugin for Minecraft servers. Click here for the GitHub source code.</p>
+                </a>
+            </div>
         </div>
     </section>
 
     <footer id="contact">
-        <p>Contact me at <a href="mailto:email@example.com">ayosynk0@gmail.com</a></p>
+        <p>Contact me at <a href="mailto:ayosynk0@gmail.com">ayosynk0@gmail.com</a></p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/asian_tactical_bomber?igsh=MTdhd3h6ZGY2b3hudg==" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100089642568887&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
         <p>&copy; Sayan Dutta</p>
     </footer>
 </body>
