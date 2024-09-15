@@ -15,8 +15,8 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            color: #e0e0e0;
-            background-color: #1c1c1c;
+            color: #333;
+            background-color: #fff;
             background-image: url("background.gif"); /* Add actual background image URL */
             background-size: cover;
             background-attachment: fixed;
@@ -33,7 +33,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7); /* Darken overlay */
+            background: rgba(0, 0, 0, 0.5); /* Darken overlay */
             z-index: -1;
         }
 
@@ -42,7 +42,7 @@
             color: #fff;
             text-align: center;
             padding: 1.5rem 0;
-            border-bottom: 2px solid #007BFF;
+            border-bottom: 2px solid #28a745; /* Green accent */
             position: relative;
             z-index: 1;
         }
@@ -56,7 +56,7 @@
             margin-top: 10px;
         }
         nav a {
-            color: #007BFF;
+            color: #28a745; /* Green accent */
             margin: 0 10px;
             text-decoration: none;
             font-size: 1rem;
@@ -65,7 +65,7 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
         nav a:hover {
-            background-color: #007BFF;
+            background-color: #28a745; /* Green background on hover */
             color: #fff;
         }
 
@@ -79,10 +79,10 @@
         /* About Section */
         section#about {
             text-align: center;
-            background: rgba(0, 0, 0, 0.7);
-            border-bottom: 2px solid #007BFF;
+            background: rgba(255, 255, 255, 0.9); /* Light background */
+            border-bottom: 2px solid #28a745;
             padding: 40px 0;
-            color: #e0e0e0;
+            color: #333;
             animation: fadeIn 1.5s ease-in-out;
         }
         section#about img {
@@ -95,7 +95,7 @@
         section#about h2 {
             margin-top: 10px;
             font-size: 2rem;
-            color: #fff;
+            color: #28a745;
         }
         section#about p {
             width: 90%;
@@ -107,7 +107,7 @@
 
         /* Skills Section */
         section#skills {
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(255, 255, 255, 0.9);
             padding: 40px 0;
             animation: slideIn 1.5s ease-in-out; /* Add slide-in animation */
         }
@@ -123,7 +123,7 @@
             margin: 15px 0;
             text-align: center;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(0, 0, 0, 0.05);
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s ease-in-out; /* Hover effect */
@@ -133,16 +133,16 @@
         }
         .skills-list div i {
             font-size: 2rem;
-            color: #007BFF;
+            color: #28a745;
         }
         .skills-list div h3 {
-            color: #fff;
+            color: #28a745;
             margin-top: 15px;
         }
 
         /* Projects Section */
         section#projects {
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(255, 255, 255, 0.9);
             padding: 40px 0;
             animation: fadeIn 1.5s ease-in-out;
         }
@@ -153,11 +153,11 @@
             gap: 20px;
         }
         .project {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(0, 0, 0, 0.05);
             padding: 20px;
             width: 100%;
             max-width: 300px;
-            border: 1px solid #007BFF;
+            border: 1px solid #28a745;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s ease-in-out;
@@ -171,15 +171,15 @@
         }
         .project h3 {
             text-align: center;
-            color: #007BFF;
+            color: #28a745;
         }
         .project a {
             text-decoration: none;
-            color: #fff;
+            color: #333;
             transition: color 0.3s ease;
         }
         .project a:hover {
-            color: #007BFF;
+            color: #28a745;
         }
 
         /* Footer Styles */
@@ -188,10 +188,10 @@
             color: white;
             text-align: center;
             padding: 15px 0;
-            border-top: 2px solid #007BFF;
+            border-top: 2px solid #28a745;
         }
         footer a {
-            color: #007BFF;
+            color: #28a745;
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -204,7 +204,7 @@
             margin-top: 10px;
         }
         .social-icons a {
-            color: #007BFF;
+            color: #28a745;
             margin: 0 10px;
             font-size: 1.5rem;
             transition: transform 0.3s ease, color 0.3s ease;
@@ -236,7 +236,7 @@
             transition: 0.3s;
         }
         .sidebar a:hover {
-            color: #007BFF;
+            color: #28a745;
             background-color: #575757;
         }
         .sidebar .closebtn {
@@ -249,7 +249,7 @@
         .openbtn {
             font-size: 1.5rem;
             cursor: pointer;
-            color: #007BFF;
+            color: #28a745;
             background: none;
             border: none;
             position: absolute;
@@ -294,13 +294,11 @@
                 width: 100px;
                 height: 100px;
             }
-            nav a {
-                font-size: 1rem;
-            }
         }
     </style>
 </head>
 <body>
+
     <header>
         <button class="openbtn" onclick="openNav()">&#9776;</button>
         <h1>Sᴀʏᴀɴ Dᴜᴛᴛᴀ</h1>
@@ -377,8 +375,8 @@
     <footer id="contact">
         <p>Contact me at <a href="mailto:ayosynk0@gmail.com">ayosynk0@gmail.com</a></p>
         <div class="social-icons">
-            <a href="https://www.instagram.com/asian_tactical_bomber?igsh=MTdhd3h6ZGY2b3hudg==" target="_blank"><i class="fab fa-instagram"></i>Iɴsᴛᴀɢʀᴀᴍ</a>
-            <a href="https://www.facebook.com/profile.php?id=100089642568887&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i>Fᴀᴄᴇʙᴏᴏᴋ</a>
+            <a href="https://www.instagram.com/asian_tactical_bomber?igsh=MTdhd3h6ZGY2b3hudg==" target="_blank"><i class="fab fa-instagram"></i> Iɴsᴛᴀɢʀᴀᴍ</a>
+            <a href="https://www.facebook.com/profile.php?id=100089642568887&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i> Fᴀᴄᴇʙᴏᴏᴋ</a>
         </div>
         <p>&copy; Sayan Dutta</p>
     </footer>
