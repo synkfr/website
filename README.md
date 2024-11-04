@@ -21,7 +21,7 @@ No special software or dependencies are required. You just need a modern web bro
 1. Download or clone the repository to your local machine.
 2. Navigate to the directory where `index.html` is located.
 3. Open `index.html` in your web browser.
-4. and you can view the page here [About Me webpage](https://blackn64.github.io/website/)
+4. and you can view the page here [About Me webpage](https://synkfr.github.io/website/)
 
 ## Contributing
 
