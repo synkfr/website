@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification Plugin</title>
+    <style>
+        * {
+            box-sizing: border-box; /* Ensure padding and border are included in total width and height */
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #F3FEB8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; /* Set the body to a column layout */
+            min-height: 100vh; /* Ensure the body takes at least full viewport height */
+        }
+        header {
+            background-color: #FF4C4C;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 28px;
+            letter-spacing: 1.5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            flex: 1; /* Allow the container to grow and fill available space */
+            max-width: 1200px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column; /* Change to column by default for mobile */
+            padding: 20px;
+            background-color: #EB5B00;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .product-images {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .main-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: transform 0.2s ease;
+        }
+        .main-image:hover {
+            transform: scale(1.05);
+        }
+        .thumbnail-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        .thumbnail:hover {
+            border-color: #4CAF50;
+        }
+        .product-details {
+            text-align: center; /* Centered text for mobile view */
+            padding: 0 20px;
+        }
+        .product-details h2 {
+            font-size: 26px;
+            margin: 15px 0;
+            color: white;
+        }
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #B12704;
+        }
+        .product-details p {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: white;
+        }
+        .buy-btn, .back-btn {
+            background-color: #FFB22C;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        .buy-btn:hover {
+            background-color: #FFDE4D;
+        }
+        .back-btn {
+            background-color: #FFB200;
+        }
+        .back-btn:hover {
+            background-color: #FFDE4D;
+        }
+        footer {
+            background-color: #FF4C4C;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row; /* Switch back to row layout for larger screens */
+            }
+            .product-images {
+                flex: 1; /* Image section takes up more space */
+            }
+            .product-details {
+                flex: 1.5; /* Details section takes up more space */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    Vᴇʀɪꜰɪᴄᴀᴛɪᴏɴ Pʟᴜɢɪɴ Oᴠᴇʀᴠɪᴇᴡ
+</header>
+
+<div class="container">
+    <div class="product-images">
+        <img id="mainImage" src="verify.png" alt="verififcation plugin img" class="main-image" onerror="this.onerror=null; this.src='placeholder.jpg';">
+
+        <div class="thumbnail-container">
+            <img src="verify.png" alt="verification plugin img" class="thumbnail" onclick="changeImage(this)" onerror="this.onerror=null; this.src='placeholder.jpg';">
+        </div>
+    </div>
+
+    <div class="product-details">
+        <h2>Vᴇʀɪꜰɪᴄᴀᴛɪᴏɴ Pʟᴜɢɪɴ</h2>
+        <p class="price">Pʟᴜɢɪɴ Oᴠᴇʀᴠɪᴇᴡ</p>
+        <p>Tʜɪs ᴠᴇʀɪꜰɪᴄᴀᴛɪᴏɴ ᴘʟᴜɢɪɴ ᴜsᴇs 4 ᴅɪɢɪᴛ ᴄᴏᴅᴇ ɴᴜᴍʙᴇʀs ɪɴsᴛᴇᴀᴅ ᴏꜰ ʟᴀᴛᴛᴇʀs. ʏᴏᴜ ᴄᴀɴ ᴄᴏɴꜰɪɢᴜʀᴇ ᴛʜᴇ ᴍsɢ ᴀɴᴅ ᴏᴛʜᴇʀ ᴛʜɪɴɢs ɪɴ ᴄᴏɴꜰɢ.ʏᴍʟ. Iᴍ ᴘʟᴀɴɴɪɴɢ ᴛᴏ ᴜᴘɢʀᴀᴅᴇ ᴛʜɪs ᴘʟᴜɢɪɴ ʙʏ ᴀᴅᴅ ᴍᴏʀᴇ ꜰᴇᴀᴛᴜʀᴇs.</p>
+        <h2 align="left" style=" color: white;">Cᴏᴍᴍᴀɴᴅs ᴀɴᴅ Usᴀɢᴇ:</h2>
+        <ul align="left" style="color: white;">
+        <li>/ᴠᴇʀɪꜰʏ sᴇᴛ <ᴄᴏᴅᴇ> [sᴇᴛ ᴀ 4 ᴅɪɢɪᴛ ᴄᴏᴅᴇ ᴜᴘᴏɴ ꜰɪʀsᴛ ᴛɪᴍᴇ ᴊᴏɪɴɪɴɢ.]</li>
+        <li>/ᴠᴇʀɪꜰʏ <ᴄᴏᴅᴇ> [ᴘᴜᴛ ᴛʜᴇ 4 ᴅɪɢɪᴛ ᴄᴏᴅᴇ ʏᴏᴜ sᴇᴛ ᴜsɪɴɢ ᴛʜᴇ /ᴠᴇʀɪꜰʏ sᴇᴛ <ᴄᴏᴅᴇ> ᴡʜᴇɴ ʟᴏɢɢɪɴɢ.]</li>
+        <li>/ᴠᴇʀꜰɪʏ ɢᴇᴛᴄᴏᴅᴇ <ᴘʟᴀʏᴇʀ> [ɪᴛs ᴀɴ Aᴅᴍɪɴ ᴄᴏᴍᴍᴀɴᴅ ᴛᴏ ɢᴇᴛ ᴀ ᴘʟᴀʏᴇʀs ᴄᴏᴅᴇ. ᴜsᴇꜰᴜʟ ᴡʜᴇɴ sᴏᴍᴇᴏɴᴇ ꜰᴏʀɢᴇᴛs ᴛʜᴇɪʀ ᴄᴏᴅᴇ. ᴀɴᴅ ᴛʜᴇ ᴄᴏᴅᴇs sᴀᴠᴇs ɪɴ ᴄᴏɴꜰɪɢ.ʏᴍʟ ᴡᴛɪᴛʜ ᴛʜᴇ ᴘʟᴀʏᴇʀs ᴜᴜɪᴅ.]</li>
+        </ul><br>
+        <a style="color: white;">Usᴇ </a><a style="color: black;">ᴠᴇʀɪꜰɪʏᴘʟᴜɢɪɴ.ɢᴇᴛᴄᴏᴅᴇ</a> <a style="color: white;">ɪꜰ ʏᴏᴜ ᴜsɪɴɢ ᴀɴʏ ᴘᴇʀᴍɪssɪᴏɴ ᴍᴀɴᴀɢᴇʀ ʟɪᴋᴇ LᴜᴄᴋPᴇʀᴍs</a><br>
+        
+        <a href="https://www.spigotmc.org/resources/verifyplugin.118077/" class="buy-btn">Dᴏᴡɴʟᴏᴀᴅ
+(ᴠɪᴀ ᴇxᴛᴇʀɴᴀʟ ʟɪɴᴋ)</a>
+        <br>
+        <a href="https://github.com/synkfr/VerifyPlugin" class="buy-btn">Vɪᴇᴡ Sᴏᴜʀᴄᴇ Cᴏᴅᴇ</a>
+        <br>
+        <br>
+        <a href="index.html" class="back-btn">Bᴀᴄᴋ ᴛᴏ Hᴏᴍᴇᴘᴀɢᴇ</a>
+    </div>
+</div>
+
+<footer>
+    &copy; 2024 | All Rights Reserved
+</footer>
+
+<script>
+    // JavaScript function to change the main image when a thumbnail is clicked
+    function changeImage(thumbnail) {
+        const mainImage = document.getElementById('mainImage');
+        mainImage.src = thumbnail.src;
+    }
+</script>
+
+</body>
+</html>
+

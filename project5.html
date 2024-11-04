@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FirstGame</title>
+    <style>
+        * {
+            box-sizing: border-box; /* Ensure padding and border are included in total width and height */
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #181C14;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; /* Set the body to a column layout */
+            min-height: 100vh; /* Ensure the body takes at least full viewport height */
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 28px;
+            letter-spacing: 1.5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            flex: 1; /* Allow the container to grow and fill available space */
+            max-width: 1200px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column; /* Change to column by default for mobile */
+            padding: 20px;
+            background-color: #3C3D37;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .product-images {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .main-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: transform 0.2s ease;
+        }
+        .main-image:hover {
+            transform: scale(1.05);
+        }
+        .thumbnail-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        .thumbnail:hover {
+            border-color: #4CAF50;
+        }
+        .product-details {
+            text-align: center; /* Centered text for mobile view */
+            padding: 0 20px;
+        }
+        .product-details h2 {
+            font-size: 26px;
+            margin: 15px 0;
+            color: white;
+        }
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #B12704;
+        }
+        .product-details p {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: white;
+        }
+        .buy-btn, .back-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        .buy-btn:hover {
+            background-color: #45a049;
+        }
+        .back-btn {
+            background-color: #557C56;
+        }
+        .back-btn:hover {
+            background-color: #555;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row; /* Switch back to row layout for larger screens */
+            }
+            .product-images {
+                flex: 1; /* Image section takes up more space */
+            }
+            .product-details {
+                flex: 1.5; /* Details section takes up more space */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    FᴀʟʟɪɴɢOʙᴊᴇᴄᴛsGᴀᴍᴇ Oᴠᴇʀᴠɪᴇᴡ
+</header>
+
+<div class="container">
+    <div class="product-images">
+        <img id="mainImage" src="FOG.jpg" alt="FallingObjectsGame" class="main-image" onerror="this.onerror=null; this.src='placeholder.jpg';">
+
+        <div class="thumbnail-container">
+            <img src="FOG.jpg" alt="FallingObjectsGame" class="thumbnail" onclick="changeImage(this)" onerror="this.onerror=null; this.src='placeholder.jpg';">
+            <img src="FOG!.jpg" alt="FallingObjectsGame" class="thumbnail" onclick="changeImage(this)" onerror="this.onerror=null; this.src='placeholder.jpg';">
+        </div>
+    </div>
+
+    <div class="product-details">
+        <h2>FᴀʟʟɪɴɢOʙᴊᴇᴄᴛsGᴀᴍᴇ</h2>
+        <p class="price">Gᴀᴍᴇ Oᴠᴇʀᴠɪᴇᴡ</p>
+        <p>I ᴍᴀᴅᴇ ᴛʜɪs ᴏɴ Iɴᴛᴇʟʟɪᴊ Iᴅᴇᴀ ᴜsɪɴɢ ᴊᴀᴠᴀ. ᴛᴏ ᴘʟᴀʏ ᴛʜɪs ɢᴀᴍᴇ ᴅᴏᴡɴʟᴏᴀᴅ ᴛʜᴇ ᴢɪᴘ ꜰɪʟᴇ ꜰɪʀsᴛ. ᴛʜᴇɴ ᴜɴᴢɪᴘ ᴛʜᴇ ꜰɪʟᴇ. ʀᴜɴ ᴛʜᴇ "ʀᴜɴ_ɢᴀᴍᴇ.sʜ" ɪꜰ ʏᴏᴜʀ ᴏɴ UʙᴜɴᴛᴜLɪɴᴜx ᴏʀ "ʀᴜɴ.ʙᴀᴛ" ɪꜰ ʏᴏᴜʀ ᴏɴ Wɪɴᴅᴏᴡs. ʏᴏᴜ ɴᴇᴇᴅ Jᴀᴠᴀ 21 ᴏʀ ʜɪɢʜᴇʀ ɪɴsᴛᴀʟʟᴇᴅ ɪɴ ʏᴏᴜʀ PC/Lᴀᴘᴛᴏᴘ.</p>
+        
+        <a href="https://drive.google.com/file/d/1ZjzJymHeHn6W6CW2wQLDsG_eBBqV1Pn9/view?usp=drive_link" class="buy-btn">Dᴏᴡɴʟᴏᴀᴅ ꜰᴏʀ UʙᴜɴᴛᴜLɪɴᴜx
+(ᴠɪᴀ ᴇxᴛᴇʀɴᴀʟ ʟɪɴᴋ)</a>
+        <a href="https://drive.google.com/file/d/1lQq8GMrcfPhN0YZWN2CpF5WWK8HUhMnO/view?usp=drive_link" class="buy-btn">Dᴏᴡɴʟᴏᴀᴅ ꜰᴏʀ Wɪɴᴅᴏᴡs
+(ᴠɪᴀ ᴇxᴛᴇʀɴᴀʟ ʟɪɴᴋ)</a>
+        <a href="https://www.oracle.com/in/java/technologies/downloads/" class="buy-btn">Dᴏᴡɴʟᴏᴀᴅ Jᴀᴠᴀ
+(ᴠɪᴀ ᴇxᴛᴇʀɴᴀʟ ʟɪɴᴋ)</a>
+        <br>
+        <a href="https://github.com/synkfr/AntiCheat" class="buy-btn">Vɪᴇᴡ Sᴏᴜʀᴄᴇ Cᴏᴅᴇ</a>
+        <br>
+        <br>
+        <a href="index.html" class="back-btn">Bᴀᴄᴋ ᴛᴏ Hᴏᴍᴇᴘᴀɢᴇ</a>
+    </div>
+</div>
+
+<footer>
+    &copy; 2024 Classic Shop | All Rights Reserved
+</footer>
+
+<script>
+    // JavaScript function to change the main image when a thumbnail is clicked
+    function changeImage(thumbnail) {
+        const mainImage = document.getElementById('mainImage');
+        mainImage.src = thumbnail.src;
+    }
+</script>
+
+</body>
+</html>
+

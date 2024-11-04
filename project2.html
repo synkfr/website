@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoidBounty</title>
+    <style>
+        * {
+            box-sizing: border-box; /* Ensure padding and border are included in total width and height */
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #E8F044;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; /* Set the body to a column layout */
+            min-height: 100vh; /* Ensure the body takes at least full viewport height */
+        }
+        header {
+            background-color: #08C2FF;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 28px;
+            letter-spacing: 1.5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            flex: 1; /* Allow the container to grow and fill available space */
+            max-width: 1200px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column; /* Change to column by default for mobile */
+            padding: 20px;
+            background-color: #006BFF;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .product-images {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .main-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: transform 0.2s ease;
+        }
+        .main-image:hover {
+            transform: scale(1.05);
+        }
+        .thumbnail-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        .thumbnail:hover {
+            border-color: #4CAF50;
+        }
+        .product-details {
+            text-align: center; /* Centered text for mobile view */
+            padding: 0 20px;
+        }
+        .product-details h2 {
+            font-size: 26px;
+            margin: 15px 0;
+            color: white;
+        }
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #B12704;
+        }
+        .product-details p {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: white;
+        }
+        .buy-btn, .back-btn {
+            background-color: #08C2FF;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        .buy-btn:hover {
+            background-color: #BCF2F6;
+        }
+        .back-btn {
+            background-color: #0D92F4;
+        }
+        .back-btn:hover {
+            background-color: #B7E0FF;
+        }
+        footer {
+            background-color: #08C2FF;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row; /* Switch back to row layout for larger screens */
+            }
+            .product-images {
+                flex: 1; /* Image section takes up more space */
+            }
+            .product-details {
+                flex: 1.5; /* Details section takes up more space */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    VᴏɪᴅBᴏᴜɴᴛʏPʟᴜɢɪɴ Oᴠᴇʀᴠɪᴇᴡ
+</header>
+
+<div class="container">
+    <div class="product-images">
+        <img id="mainImage" src="voidbounty.png" alt="VoidBounty img" class="main-image" onerror="this.onerror=null; this.src='placeholder.jpg';">
+
+        <div class="thumbnail-container">
+            <img src="voidbounty.png" alt="VoidBounty Img" class="thumbnail" onclick="changeImage(this)" onerror="this.onerror=null; this.src='placeholder.jpg';">
+        </div>
+    </div>
+
+    <div class="product-details">
+        <h2>VᴏɪᴅBᴏᴜɴᴛʏPʟᴜɢɪɴ</h2>
+        <p class="price">Pʟᴜɢɪɴ Oᴠᴇʀᴠɪᴇᴡ</p>
+        <p>Tʜᴇ Bᴏᴜɴᴛʏ Pʟᴜɢɪɴ ᴇɴʜᴀɴᴄᴇs ᴛʜᴇ ɢᴀᴍᴇᴘʟᴀʏ ᴇxᴘᴇʀɪᴇɴᴄᴇ ʙʏ ᴀʟʟᴏᴡɪɴɢ ᴘʟᴀʏᴇʀs ᴛᴏ ᴇᴀʀɴ ʙᴏᴜɴᴛɪᴇs ꜰᴏʀ ᴋɪʟʟɪɴɢ ᴏᴛʜᴇʀ ᴘʟᴀʏᴇʀs ᴏʀ ᴍᴏʙs. Tʜɪs ᴘʟᴜɢɪɴ ɪɴᴄʟᴜᴅᴇs ᴠᴀʀɪᴏᴜs ꜰᴇᴀᴛᴜʀᴇs ᴛᴏ ᴍᴀɴᴀɢᴇ ʙᴏᴜɴᴛɪᴇs, ᴛʀᴀᴄᴋ ᴋɪʟʟ sᴛʀᴇᴀᴋs, ᴀɴᴅ ᴅɪsᴘʟᴀʏ sᴘᴇᴄɪᴀʟ ᴍᴇssᴀɢᴇs ʙᴀsᴇᴅ ᴏɴ ʙᴏᴜɴᴛʏ ᴀᴍᴏᴜɴᴛs.</p>
+        
+        <ul align="left"  style="color: white;">
+        <li>Eᴀʀɴ ʙᴏᴜɴᴛɪᴇs ꜰᴏʀ ᴋɪʟʟɪɴɢ ᴘʟᴀʏᴇʀs ᴀɴᴅ ᴍᴏʙs.</li>
+        <li>Lᴏsᴇ 50% ᴏꜰ ʏᴏᴜʀ ʙᴏᴜɴᴛʏ ᴜᴘᴏɴ ᴅᴇᴀᴛʜ.</li>
+        <li>𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐭𝐨 𝐦𝐚𝐧𝐚𝐠𝐞 𝐛𝐨𝐮𝐧𝐭𝐢𝐞𝐬 𝐮𝐬𝐞 /𝐛 𝐟𝐨𝐫 𝐬𝐡𝐨𝐫𝐭:</li>
+        <a style="color: #E2F1E7;"> 1. /ʙᴏᴜɴᴛʏ 𝐬ᴇᴛ <ᴘʟᴀʏᴇʀ> <ᴀᴍᴏᴜɴᴛ>: Sᴇᴛ ᴀ sᴘᴇᴄɪꜰɪᴄ ʙᴏᴜɴᴛʏ ᴏɴ ᴀ ᴘʟᴀʏᴇʀ. Nᴏᴛᴇ ᴛʜᴀᴛ ɪᴛ ᴅᴏᴇsɴ'ᴛ ᴀᴅᴅ ʙᴏᴜɴᴛʏ ɪᴛs sᴇᴛs ᴀ sᴘᴇᴄɪꜰɪᴄ Bᴏᴜɴᴛʏ ᴏɴ ᴘʟᴀʏᴇʀ.</a><br>
+        <a style="color: #E2F1E7;"> 2. /ʙᴏᴜɴᴛʏ ʟᴇᴀᴅᴇʀʙᴏᴀʀᴅ: Vɪᴇᴡ ᴛʜᴇ ʟᴇᴀᴅᴇʀʙᴏᴀʀᴅ ᴏꜰ ᴘʟᴀʏᴇʀs ᴡɪᴛʜ ᴛʜᴇ ʜɪɢʜᴇsᴛ ʙᴏᴜɴᴛɪᴇs.</a><br>
+        <a style="color: #E2F1E7;"> 3. /ʙᴏᴜɴᴛʏ ʀᴇᴍᴏᴠᴇ <ᴘʟᴀʏᴇʀ>: Rᴇᴍᴏᴠᴇ Bᴏᴜɴᴛʏ Fʀᴏᴍ ᴛʜᴇ ᴘʟᴀʏᴇʀ.</a><br>
+        <a style="color: #E2F1E7;"> 4 ./ʙᴏᴜɴᴛʏ <ᴘʟᴀʏᴇʀ>: ᴠɪᴇᴡ ᴀ ᴘʟᴀʏᴇʀ's ʙᴏᴜɴᴛʏ.</a><br>
+        <a> </a><br>
+        <li>Sᴘᴇᴄɪᴀʟ ᴊᴏɪɴ ᴍᴇssᴀɢᴇs ʙᴀsᴇᴅ ᴏɴ ʙᴏᴜɴᴛʏ ʀᴀɴɢᴇs.</li>
+        <li>Sᴜᴘᴘᴏʀᴛ ꜰᴏʀ ᴄʜᴀᴛ ᴄᴏʟᴏʀ ɪɴ ᴍᴇssᴀɢᴇs.</li>
+        <li>Cᴏɴꜰɪɢᴜʀᴇ sᴘᴇᴄɪꜰɪᴄ ʙᴏᴜɴᴛɪᴇs ꜰᴏʀ ᴋɪʟʟɪɴɢ sᴘᴇᴄɪꜰɪᴄ ᴍᴏʙs.</li>
+        <li>Kɪʟʟ sᴛʀᴇᴀᴋ ᴛʀᴀᴄᴋɪɴɢ ᴛᴏ ᴀᴘᴘʟʏ ᴍᴜʟᴛɪᴘʟɪᴇʀs ᴛᴏ ʙᴏᴜɴᴛɪᴇs.</li>
+        </ul>
+        
+        
+        <!-- Buy Button -->
+        <a href="https://modrinth.com/plugin/voidbountyplugin" class="buy-btn">Dᴏᴡɴʟᴏᴀᴅ
+(ᴠɪᴀ ᴇxᴛᴇʀɴᴀʟ ʟɪɴᴋ)</a>
+        <br>
+        <a href="https://github.com/synkfr/VoidBounty" class="buy-btn">Vɪᴇᴡ Sᴏᴜʀᴄᴇ Cᴏᴅᴇ</a>
+        <br>
+        <br>
+        <a href="index.html" class="back-btn">Bᴀᴄᴋ ᴛᴏ Hᴏᴍᴇᴘᴀɢᴇ</a>
+    </div>
+</div>
+
+<footer>
+    &copy; 2024 Classic Shop | All Rights Reserved
+</footer>
+
+<script>
+    // JavaScript function to change the main image when a thumbnail is clicked
+    function changeImage(thumbnail) {
+        const mainImage = document.getElementById('mainImage');
+        mainImage.src = thumbnail.src;
+    }
+</script>
+
+</body>
+</html>
+
